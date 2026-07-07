@@ -147,7 +147,11 @@ export default function Home() {
                 className="group rounded-[2rem] border border-yellow-500/20 bg-black p-8 transition hover:-translate-y-2 hover:border-yellow-400"
               >
                 <div className="mb-6 flex h-40 items-center justify-center rounded-3xl bg-gradient-to-br from-yellow-500/20 to-black text-gray-500">
-                  Image Slot
+                  <img
+                  src="/food/burger.jpg"
+                    alt="Burger"
+                      className="h-40 w-full rounded-3xl object-cover"
+                        />
                 </div>
 
                 <h3 className="mb-3 text-2xl font-black text-yellow-400">
