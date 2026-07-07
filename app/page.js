@@ -1,42 +1,93 @@
+const menuItems = [
+  "Breakfast",
+  "Burgers",
+  "Grills",
+  "Curries",
+  "Pastas",
+  "Cocktails",
+];
+
+const events = [
+  {
+    title: "Live Band Night",
+    day: "Friday",
+    desc: "Good music, great food, and weekend energy.",
+  },
+  {
+    title: "DJ Saturday",
+    day: "Saturday",
+    desc: "Afrobeats, Amapiano, Dancehall and party vibes.",
+  },
+  {
+    title: "Private Events",
+    day: "Available",
+    desc: "Host birthdays, dinners, meetups and special nights.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
-      {/* HERO */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 text-center">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#3a2a08_0%,#000_55%)]" />
-        <div className="absolute inset-0 bg-black/40" />
+      {/* NAV */}
+      <nav className="fixed left-0 top-0 z-50 w-full border-b border-yellow-500/20 bg-black/80 px-6 py-4 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between">
+          <a href="#" className="flex items-center gap-3">
+            <img
+              src="/zone7-logo.png"
+              alt="Zone 7 Logo"
+              className="h-12 w-12 rounded-full bg-white object-contain p-1"
+            />
+            <span className="text-xl font-black tracking-wide text-yellow-400">
+              ZONE 7
+            </span>
+          </a>
 
-        <div className="relative z-10 max-w-4xl">
+          <div className="hidden gap-8 text-sm font-semibold text-gray-300 md:flex">
+            <a href="#about" className="hover:text-yellow-400">About</a>
+            <a href="#menu" className="hover:text-yellow-400">Menu</a>
+            <a href="#events" className="hover:text-yellow-400">Events</a>
+            <a href="#gallery" className="hover:text-yellow-400">Gallery</a>
+            <a href="#contact" className="hover:text-yellow-400">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-24 text-center">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#4a3509_0%,#111_35%,#000_70%)]" />
+        <div className="absolute inset-0 bg-black/30" />
+
+        <div className="relative z-10 max-w-5xl">
           <img
             src="/zone7-logo.png"
             alt="Zone 7 Logo"
-            className="mx-auto mb-8 w-64 rounded-2xl bg-white p-6 shadow-2xl md:w-80"
+            className="mx-auto mb-8 w-56 rounded-3xl bg-white p-5 shadow-2xl shadow-yellow-500/20 md:w-72"
           />
 
-          <p className="mb-4 tracking-[0.45em] text-yellow-400">
-            FOOD • DRINKS • EVENTS
+          <p className="mb-5 text-sm font-bold uppercase tracking-[0.45em] text-yellow-400">
+            Food • Drinks • Events
           </p>
 
-          <h1 className="mb-6 text-5xl font-black md:text-7xl">
-            Welcome to Zone 7
+          <h1 className="mb-6 text-5xl font-black leading-tight md:text-7xl">
+            Experience Zone 7
           </h1>
 
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-300 md:text-xl">
-            A premium spot for great food, refreshing drinks, events, music,
-            and unforgettable moments in Mbuya.
+          <p className="mx-auto mb-10 max-w-2xl text-lg leading-8 text-gray-300 md:text-xl">
+            A premium spot in Mbuya for delicious food, chilled drinks,
+            entertainment, events, and unforgettable moments.
           </p>
 
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a
               href="#events"
-              className="rounded-full bg-yellow-500 px-8 py-4 font-bold text-black transition hover:bg-yellow-400"
+              className="rounded-full bg-yellow-500 px-8 py-4 font-black text-black transition hover:bg-yellow-400"
             >
               View Events
             </a>
 
             <a
               href="#menu"
-              className="rounded-full border border-yellow-500 px-8 py-4 font-bold text-yellow-400 transition hover:bg-yellow-500 hover:text-black"
+              className="rounded-full border border-yellow-500 px-8 py-4 font-black text-yellow-400 transition hover:bg-yellow-500 hover:text-black"
             >
               Explore Menu
             </a>
@@ -45,68 +96,67 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section className="px-6 py-24">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
+      <section id="about" className="px-6 py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
-              About Us
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
+              About Zone 7
             </p>
 
-            <h2 className="mb-6 text-4xl font-black md:text-5xl">
-              Food, drinks and events in one place.
+            <h2 className="mb-6 text-4xl font-black md:text-6xl">
+              Where food, music and good company meet.
             </h2>
 
             <p className="text-lg leading-8 text-gray-300">
-              Zone 7 brings together delicious meals, chilled drinks, music,
-              entertainment, and a relaxed atmosphere for friends, families,
-              and groups looking for a memorable experience.
+              Zone 7 is a vibrant restaurant and entertainment spot designed
+              for people who enjoy great meals, refreshing drinks, live moments,
+              and a relaxed atmosphere.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-yellow-500/30 bg-white/5 p-8 shadow-2xl">
-            <h3 className="mb-4 text-2xl font-bold text-yellow-400">
-              Why Visit Zone 7?
+          <div className="rounded-[2rem] border border-yellow-500/20 bg-white/5 p-8 shadow-2xl">
+            <h3 className="mb-6 text-2xl font-black text-yellow-400">
+              Why people love Zone 7
             </h3>
 
-            <div className="space-y-4 text-gray-300">
-              <p>🍽️ Fresh food and tasty bites</p>
-              <p>🍹 Drinks, cocktails and milkshakes</p>
-              <p>🎶 Events, music and entertainment</p>
+            <div className="space-y-5 text-lg text-gray-300">
+              <p>🍽️ Delicious meals and tasty bites</p>
+              <p>🍹 Cocktails, milkshakes and drinks</p>
+              <p>🎶 Music, events and entertainment</p>
               <p>📍 Located in Mbuya, Kampala</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* MENU PREVIEW */}
+      {/* MENU */}
       <section id="menu" className="bg-zinc-950 px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
-            Menu
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
+            Menu Preview
           </p>
 
-          <h2 className="mb-12 text-4xl font-black md:text-5xl">
-            Explore our favourites
+          <h2 className="mb-12 text-4xl font-black md:text-6xl">
+            Taste the experience
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {[
-              "Breakfast",
-              "Burgers",
-              "Grills",
-              "Curries",
-              "Milkshakes",
-              "Cocktails",
-            ].map((item) => (
+            {menuItems.map((item) => (
               <div
                 key={item}
-                className="rounded-3xl border border-yellow-500/20 bg-black p-8 transition hover:-translate-y-1 hover:border-yellow-400"
+                className="group rounded-[2rem] border border-yellow-500/20 bg-black p-8 transition hover:-translate-y-2 hover:border-yellow-400"
               >
-                <h3 className="mb-3 text-2xl font-bold text-yellow-400">
+                <div className="mb-6 flex h-40 items-center justify-center rounded-3xl bg-gradient-to-br from-yellow-500/20 to-black text-gray-500">
+                  Image Slot
+                </div>
+
+                <h3 className="mb-3 text-2xl font-black text-yellow-400">
                   {item}
                 </h3>
+
                 <p className="text-gray-400">
-                  Enjoy carefully prepared {item.toLowerCase()} at Zone 7.
+                  Explore our selection of {item.toLowerCase()} prepared for
+                  your perfect Zone 7 moment.
                 </p>
               </div>
             ))}
@@ -116,40 +166,24 @@ export default function Home() {
 
       {/* EVENTS */}
       <section id="events" className="px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
             Events
           </p>
 
-          <h2 className="mb-12 text-4xl font-black md:text-5xl">
-            Upcoming experiences
+          <h2 className="mb-12 text-4xl font-black md:text-6xl">
+            What’s happening at Zone 7
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: "Friday Live Band",
-                time: "Every Friday",
-                desc: "Good food, live music and weekend vibes.",
-              },
-              {
-                title: "DJ Saturday",
-                time: "Every Saturday",
-                desc: "Afrobeats, Amapiano, Dancehall and party energy.",
-              },
-              {
-                title: "Special Nights",
-                time: "Coming Soon",
-                desc: "Watch this space for offers and themed events.",
-              },
-            ].map((event) => (
+            {events.map((event) => (
               <div
                 key={event.title}
-                className="rounded-3xl border border-yellow-500/20 bg-white/5 p-8"
+                className="rounded-[2rem] border border-yellow-500/20 bg-white/5 p-8 transition hover:bg-white/10"
               >
-                <p className="mb-3 text-sm text-yellow-400">{event.time}</p>
-                <h3 className="mb-3 text-2xl font-bold">{event.title}</h3>
-                <p className="text-gray-400">{event.desc}</p>
+                <p className="mb-4 font-bold text-yellow-400">{event.day}</p>
+                <h3 className="mb-4 text-3xl font-black">{event.title}</h3>
+                <p className="leading-7 text-gray-400">{event.desc}</p>
               </div>
             ))}
           </div>
@@ -157,20 +191,20 @@ export default function Home() {
       </section>
 
       {/* GALLERY */}
-      <section className="bg-zinc-950 px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
+      <section id="gallery" className="bg-zinc-950 px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
             Gallery
           </p>
 
-          <h2 className="mb-12 text-4xl font-black md:text-5xl">
-            Moments at Zone 7
+          <h2 className="mb-12 text-4xl font-black md:text-6xl">
+            Moments worth sharing
           </h2>
 
           <div className="grid gap-4 md:grid-cols-4">
-            {[1, 2, 3, 4].map((box) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
               <div
-                key={box}
+                key={item}
                 className="flex h-56 items-center justify-center rounded-3xl border border-yellow-500/20 bg-black text-gray-500"
               >
                 Image Slot
@@ -181,23 +215,23 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
+      <section id="contact" className="px-6 py-24">
+        <div className="mx-auto max-w-5xl rounded-[2rem] border border-yellow-500/20 bg-white/5 p-10 text-center">
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.35em] text-yellow-400">
             Visit Us
           </p>
 
-          <h2 className="mb-6 text-4xl font-black md:text-5xl">
+          <h2 className="mb-6 text-4xl font-black md:text-6xl">
             Come through to Zone 7
           </h2>
 
-          <p className="mb-8 text-gray-300">
+          <p className="mb-8 text-lg text-gray-300">
             Mbuya, Kampala • Food • Drinks • Events
           </p>
 
           <a
             href="https://wa.me/256771753680"
-            className="inline-block rounded-full bg-yellow-500 px-10 py-4 font-bold text-black transition hover:bg-yellow-400"
+            className="inline-block rounded-full bg-yellow-500 px-10 py-4 font-black text-black transition hover:bg-yellow-400"
           >
             Contact on WhatsApp
           </a>
